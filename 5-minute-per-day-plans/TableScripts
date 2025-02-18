@@ -1,0 +1,31 @@
+<-- activities Table -->>
+
+CREATE TABLE `activities` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `category` varchar(255) DEFAULT NULL,
+  `activity_title` varchar(255) DEFAULT NULL,
+  `frequency` varchar(50) DEFAULT NULL,
+  `time` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+<-- activity_progress Table -->
+CREATE TABLE `activity_progress` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int DEFAULT NULL,
+  `activity_dates` varchar(255) DEFAULT NULL,
+  `suggested_activities` varchar(255) DEFAULT NULL,
+  `completed_activities` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_user_activity` (`user_id`,`activity_dates`)
+);
+
+<-- user Table -->
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_sb8bbouer5wak8vyiiy4pf2bx` (`username`)
+) 
