@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: 5-minute-per-day-plans
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwt
+    username: root
+    password: skywinder@200
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
